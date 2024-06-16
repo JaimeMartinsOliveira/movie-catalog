@@ -1,0 +1,145 @@
+<!-- addFilmes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Filmes - Meu App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos adicionais específicos para este arquivo */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            margin: 0;
+            font-size: 24px;
+            padding-left: 20px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            padding-right: 20px;
+        }
+
+        .navbar-link {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-link:hover {
+            background-color: #555;
+        }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .movie-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .movie-details {
+            display: flex;
+            justify-content: flex-end; /* Alinha à direita */
+            margin-top: 20px;
+            max-width: 800px; /* Largura máxima para o formulário */
+        }
+
+        .movie-poster {
+            width: 200px; /* Tamanho fixo para o cartaz de filme */
+            height: 300px;
+            border: 1px solid #ccc;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .movie-poster img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Garante que a imagem cubra todo o espaço */
+        }
+
+        .movie-info {
+            flex: 1; /* Ocupa todo o espaço disponível */
+        }
+
+        .movie-info input[type="text"], 
+        .movie-info textarea {
+            width: 100%; /* Ocupa toda a largura do container */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .movie-info textarea {
+            height: 100px; /* Altura fixa para o campo de descrição */
+            resize: vertical; /* Permite redimensionamento vertical */
+        }
+
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar-brand">Meu App</h1>
+        <div class="navbar-links">
+            <a href="favorites.html" class="navbar-link">Meu favorito</a>
+            <a href="login.html" class="navbar-link">Login</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="movie-header">Adicionar Filmes</h2>
+        <div class="movie-details">
+            <div class="movie-poster">
+                <img src="placeholder.jpg" alt="Placeholder">
+            </div>
+            <div class="movie-info">
+                <input type="text" id="movieTitle" placeholder="Título do Filme" required>
+                <textarea id="movieDescription" placeholder="Descrição do Filme" required></textarea>
+                <input type="text" id="directorName" placeholder="Nome do Diretor" required>
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Adicionar Filme</button>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
