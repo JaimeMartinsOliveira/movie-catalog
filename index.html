@@ -1,0 +1,128 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Meu App</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <style>
+        /* Estilos adicionais específicos para este arquivo */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            margin: 0;
+            font-size: 24px;
+            padding-left: 20px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            padding-right: 20px;
+        }
+
+        .navbar-link {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-link:hover {
+            background-color: #555;
+        }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <h1 class="navbar-brand">Meu App</h1>
+            <div class="navbar-links">
+                <a href="favorites.html" class="navbar-link">Meu favorito</a>
+                <a href="login.html" class="navbar-link">Login</a>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="form-container">
+                <div class="form-toggle">
+                    <button id="login-toggle"
+                        onclick="toggleLogin()">Login</button>
+                    <button id="register-toggle"
+                        onclick="toggleRegister()">Register</button>
+                </div>
+
+                <form id="login-form" class="form" onsubmit="return login()">
+                    <h2>Login</h2>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p>Novo por aqui? <a href="#" onclick="showRegisterForm()"
+                            class="register-link">Registre agora</a></p>
+                </form>
+
+                <form id="register-form" class="form">
+                    <h2>Register</h2>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password"
+                        required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const loginToggle = document.getElementById('login-toggle');
+        const registerToggle = document.getElementById('register-toggle');
+
+        function toggleLogin() {
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
+            loginToggle.classList.add('active');
+            registerToggle.classList.remove('active');
+        }
+
+        function toggleRegister() {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+            loginToggle.classList.remove('active');
+            registerToggle.classList.add('active');
+        }
+
+        function showRegisterForm() {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+            loginToggle.classList.remove('active');
+            registerToggle.classList.add('active');
+        }
+
+        function login() {
+            // Simular lógica de login
+            // Aqui você pode verificar as credenciais
+            // Vamos simular um login bem-sucedido após 1 segundo
+            setTimeout(() => {
+                alert("Login bem-sucedido!");
+                // Redirecionar manualmente para a página de favoritos após o login
+                window.location.href = "favorites.html";
+            }, 1000);
+
+            return false; // Evitar o envio do formulário
+        }
+    </script>
+    </body>
+</html>
